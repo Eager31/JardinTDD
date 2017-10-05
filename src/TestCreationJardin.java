@@ -17,5 +17,11 @@ public class TestCreationJardin {
 		assertEquals(jardin.getLongeur(),4);
 	}
 	
-
+	@Test
+	public void AjouterGrainesDansPanier() {
+		Jardin jardin = new Jardin(4,6);
+		jardin.AjouterGraines("Ail",5);
+		assertEquals(jardin.VerifierGraines("Ail"),5);
+	}
+	
 }
