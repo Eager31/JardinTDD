@@ -37,9 +37,14 @@ public class Jardin {
 		this.panier = panier;
 	}
 
-	public void AjouterGraines(String nomVegetal, int nombreGraines) {
+	public void AjouterGraines(String nomVegetal, int nombreGraines) throws IllegalArgumentException {
 		// TODO Auto-generated method stub
-		this.panier.put(nomVegetal, nombreGraines);
+		if(nombreGraines < 0)
+		      throw new IllegalArgumentException();
+		    else
+		    {
+		    	this.panier.put(nomVegetal, nombreGraines);
+		    }
 	}
 	
 	public int VerifierGraines(String nomVegetal) {

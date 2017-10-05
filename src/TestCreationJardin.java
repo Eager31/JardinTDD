@@ -18,10 +18,15 @@ public class TestCreationJardin {
 	}
 	
 	@Test
-	public void AjouterGrainesDansPanier() {
+	public void AjouterGrainesDansPanier() throws Exception {
 		Jardin jardin = new Jardin(4,6);
 		jardin.AjouterGraines("Ail",5);
 		assertEquals(jardin.VerifierGraines("Ail"),5);
 	}
 	
+	@Test(expected=IllegalArgumentException.class)
+	public void AjouterValeurNegatives() throws Exception {
+		Jardin jardin = new Jardin(4,6);
+		jardin.AjouterGraines("Ail",-5);
+	}
 }
