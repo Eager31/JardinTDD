@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Jardin {
@@ -62,6 +63,29 @@ public class Jardin {
 		this.emplacements = emplacements;
 	}
 
+	@Override
+	public String toString() {
+			return String.format("Voici notre jardin :\n %s\n Et notre panier contient :\n Tomate : %d graine(s) \n Carotte : %d graine(s)\n Ail : %d graine(s)\n Betterave :  %d graine(s)",RetournerJardin()				
+						,this.panier.get("Tomate"),this.panier.get("Carotte"),this.panier.get("Ail"),this.panier.get("Betterave"));
+		}
 
+	public String RetournerJardin() {
+		// TODO Auto-generated method stub
+		String chaineFinale = "\n"; //Saut de ligne dès le début
+		String tmp;
+		for (int x = 0; x < this.longeur; x++) {
+			for (int y = 0; y < this.largeur; y++) {
+					if (this.emplacements[x][y]  != null) {
+						tmp = String.format("%c", this.emplacements[x][y].getVegetal().getCaractereDessin( this.emplacements[x][y].getVegetal().getEtat().ordinal() ));//On affiche le caractère
+						chaineFinale = chaineFinale.concat(tmp);
+					}else {
+						tmp = String.format("%c", 'o'); //Si c'est nul
+						chaineFinale = chaineFinale.concat(tmp);
+					}
+			}
+			chaineFinale = chaineFinale.concat("\n");
+		}
+		return chaineFinale;
+	}
 
 }
