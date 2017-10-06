@@ -1,5 +1,6 @@
 import java.util.HashMap;
 
+import Vegetaux.Etat;
 import Vegetaux.Vegetal;
 
 public class Jardin {
@@ -114,4 +115,21 @@ public class Jardin {
 		}
 	}
 
+	public void saisonSuivante() {
+		// TODO Auto-generated method stub
+		for (int x = 0; x < this.longeur; x++) {
+			for (int y = 0; y < this.largeur; y++) {
+				if (this.emplacements[x][y] == null)
+					return ;
+				if (this.emplacements[x][y].getVegetal().getEtat() == Etat.MORT) {
+					return ;
+				}else {
+					this.emplacements[x][y].getVegetal().grandir();
+				}
+			}
+		
+		}
+
+	}
 }
+

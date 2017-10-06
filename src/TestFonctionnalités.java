@@ -46,12 +46,22 @@ public class TestFonctionnalités {
 	}
 	
 	//Test pour vérifier qu'une graine est bien retirée quand on plante
-		@Test
-		public void TestValeurGraineApresPlantation() {
-			Carotte car = new Carotte();
-			jardin.AjouterGraines("Carotte", 5);
-			jardin.semer(0,0,car); //On plante nos carottes
-			int nbrGraines = jardin.getPanier().get("Carotte");
-			assertEquals(nbrGraines,4);
-		}
+	@Test
+	public void TestValeurGraineApresPlantation() {
+		Carotte car = new Carotte();
+		jardin.AjouterGraines("Carotte", 5);
+		jardin.semer(0,0,car); //On plante nos carottes
+		int nbrGraines = jardin.getPanier().get("Carotte");
+		assertEquals(nbrGraines,4);
+	}
+	
+	//Test pour savoir si on fais pousser une fois, la plante évolue
+	@Test
+	public void TestPasserUneSaison() {
+		Carotte car = new Carotte();
+		jardin.AjouterGraines("Carotte", 1);
+		jardin.semer(0,0,car); 
+		jardin.saisonSuivante();//On fais pousser la plante
+		assertEquals(jardin.getEmplacements()[0][0].getVegetal().getCaractereDessin(jardin.getEmplacements()[0][0].getVegetal().getEtat().ordinal()),'.');
+	}
 }
