@@ -57,7 +57,7 @@ public class Jardin {
 		else if (this.getPanier().get(nomVegetal) == 0) {
 		    		System.out.println("Vous ne pouvez pas planter, vous n'avez pas assez de graine pour ce type de légume");
 		    	}else {
-		    		this.panier.put(nomVegetal, nombreGraines);
+		    		this.panier.put(nomVegetal, this.panier.get(nomVegetal)-1); //On met à jour le nombre de végetaux
 		    	}
 		    }
 	

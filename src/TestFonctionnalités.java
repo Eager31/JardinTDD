@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Vegetaux.Ail;
+import Vegetaux.Carotte;
 
 public class TestFonctionnalités {
 
@@ -44,4 +45,13 @@ public class TestFonctionnalités {
 		jardin.semer(0,0,ail);
 	}
 	
+	//Test pour vérifier qu'une graine est bien retirée quand on plante
+		@Test
+		public void TestValeurGraineApresPlantation() {
+			Carotte car = new Carotte();
+			jardin.AjouterGraines("Carotte", 5);
+			jardin.semer(0,0,car); //On plante nos carottes
+			int nbrGraines = jardin.getPanier().get("Carotte");
+			assertEquals(nbrGraines,4);
+		}
 }
