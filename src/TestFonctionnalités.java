@@ -3,6 +3,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import Vegetaux.Ail;
+
 public class TestFonctionnalités {
 
 	private Jardin jardin;
@@ -19,4 +21,10 @@ public class TestFonctionnalités {
 		assertTrue(jardin.RetournerJardin().contains("oooo")); 
 	}
 
+	//Test affichage après ajout d'un légume
+	@Test
+	public void TestAffichageJardinAvecModifications() {
+		jardin.getEmplacements()[0][2] = new Emplacement(new Ail());
+		assertTrue(jardin.RetournerJardin().contains("oo_o")); 
+	}
 }
