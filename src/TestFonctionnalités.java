@@ -99,4 +99,17 @@ public class TestFonctionnalités {
 		jardin.saisonSuivante();
 		//rien ne se passe car dans semer() on return; si l'Etat est égal à mort
 	}
+	
+	@Test
+	public void TestSurRecolte() {
+		Carotte car = new Carotte();
+		jardin.AjouterGraines("Carotte", 1);
+		jardin.semer(0,0,car); 
+		jardin.saisonSuivante();//On fais pousser la plante jusqu'à ce qu'elle soit récoltable
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		jardin.recolter();
+		assertEquals(jardin.getEmplacements()[0][0],null);
+	}
 }

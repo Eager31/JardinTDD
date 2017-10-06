@@ -131,5 +131,20 @@ public class Jardin {
 		}
 
 	}
+
+	public void recolter() {
+		// TODO Auto-generated method stub
+		for (int x = 0; x < this.longeur; x++) {
+			for (int y = 0; y < this.largeur; y++) {
+				if (this.emplacements[x][y] == null)
+					return ;
+				if (this.emplacements[x][y].getVegetal().getEtat() == Etat.FLEUR) {
+					this.emplacements[x][y] = null;//On passe la fleur à null
+				}
+			}
+				
+		}
+	}
 }
+
 
