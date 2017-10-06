@@ -50,5 +50,11 @@ public class TestVegetaux {
 				assertTrue(carotte instanceof Vegetal);
 				assertTrue(tomate instanceof Vegetal);
 			}
-
+			
+			//Tests de l'état par défaut
+			@Test
+			public void TestEtatVegetal() throws Exception {
+				Ail ail = new Ail();
+				assertEquals(ail.getEtat(),Etat.GRAINE);
+			}
 }
