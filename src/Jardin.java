@@ -1,6 +1,9 @@
 import java.util.HashMap;
+import java.util.AbstractMap.SimpleEntry;
 
+import Vegetaux.Betterave;
 import Vegetaux.Etat;
+import Vegetaux.IOgm;
 import Vegetaux.IRacePure;
 import Vegetaux.Vegetal;
 
@@ -146,11 +149,18 @@ public class Jardin {
 				}
 				else if (this.emplacements[x][y].getVegetal().getEtat() == Etat.FLEUR) {
 					if(this.emplacements[x][y].getVegetal() instanceof IRacePure) {
-							IRacePure v = (IRacePure) this.emplacements[x][y].getVegetal();
-							v.seReproduire(this.panier);
-					}else {
-					this.emplacements[x][y] = null;//On passe la fleur à null
+						IRacePure v = (IRacePure) this.emplacements[x][y].getVegetal();
+						v.seReproduire(this.panier);
 					}
+					if (this.emplacements[x][y].getVegetal() instanceof IOgm) {
+						IOgm v = (IOgm) this.emplacements[x][y].getVegetal();
+						SimpleEntry<Integer, Integer> duplicat;
+						duplicat = v.seDupliquer(this.longeur, this.largeur);
+						int NewX = duplicat.getKey();
+						int NewY = duplicat.getValue();
+						this.emplacements[NewX][NewY] = new Emplacement((Betterave) v);
+					}
+				this.emplacements[x][y] = null;//On passe la fleur à null
 				}
 			}
 		}

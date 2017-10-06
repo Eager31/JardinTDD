@@ -12,9 +12,12 @@ public class Betterave extends Vegetal implements IOgm{
 	}
 
 	@Override
-	public SimpleEntry<Integer, Integer> seDupliquer(int longueur, int largeur) {
+	public SimpleEntry<Integer, Integer> seDupliquer(int longeur, int largeur) {
 		// TODO Auto-generated method stub
-		return null;
+		int nX = (int) (Math.random() * longeur ); //Pour un entier entre 0 et longueurMax  
+		int nY = (int) (Math.random() * largeur );
+		SimpleEntry<Integer,Integer> refonte = new SimpleEntry<>(nX,nY); //On crée la valeur de retour (deux paramètres de retour)
+		return refonte;
 	}
 
 }
