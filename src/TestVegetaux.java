@@ -65,5 +65,14 @@ public class TestVegetaux {
 				assertEquals(ail.getCaractereDessin(0),'_');
 			}
 			
-			
+			//Test des caractères spéciaux
+			@Test
+			public void TestCaractèresSpéciaux() throws Exception {
+				Ail ail = new Ail();
+				Betterave bet = new Betterave();
+				assertEquals(ail.getCaractereDessin(3),'a');
+				assertEquals(ail.getCaractereDessin(4),'A');
+				assertEquals(bet.getCaractereDessin(3),'b');
+				assertEquals(bet.getCaractereDessin(4),'B');
+			}
 }

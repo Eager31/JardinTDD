@@ -1,8 +1,8 @@
 
 public abstract class Vegetal {
 
-	private Etat etat;
-	private char[] dessin = {'_','.','i',' ',' ','#'};
+	protected Etat etat;
+	protected char[] dessin = {'_','.','i',' ',' ','#'}; //passage à protected pour exploiter au niveau des enfants
 	
 	public Vegetal () {
 		this.etat = etat.GRAINE;
