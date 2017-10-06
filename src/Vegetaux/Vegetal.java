@@ -1,3 +1,4 @@
+package Vegetaux;
 
 public abstract class Vegetal {
 

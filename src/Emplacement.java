@@ -1,3 +1,4 @@
+import Vegetaux.Vegetal;
 
 public class Emplacement {
 

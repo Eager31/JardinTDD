@@ -1,3 +1,4 @@
+package Vegetaux;
 
 public enum Etat {
 	

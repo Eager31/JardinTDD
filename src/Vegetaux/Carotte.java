@@ -1,3 +1,4 @@
+package Vegetaux;
 
 public class Carotte extends Vegetal {
 
