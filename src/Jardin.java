@@ -51,6 +51,17 @@ public class Jardin {
 		    }
 	}
 	
+	public void retirerGraines(String nomVegetal, int nombreGraines) {
+		if(nombreGraines > 0)
+		      throw new IllegalArgumentException();
+		else if (this.getPanier().get(nomVegetal) == 0) {
+		    		System.out.println("Vous ne pouvez pas planter, vous n'avez pas assez de graine pour ce type de légume");
+		    	}else {
+		    		this.panier.put(nomVegetal, nombreGraines);
+		    	}
+		    }
+	
+	
 	public int VerifierGraines(String nomVegetal) {
 		// TODO Auto-generated method stub
 		return this.panier.get(nomVegetal);
@@ -91,7 +102,16 @@ public class Jardin {
 
 	public void semer(int x, int y, Vegetal v) {
 		// TODO Auto-generated method stub
-		this.emplacements[x][y] = new Emplacement(v);
+		String nomDeMonLegume = v.getClass().getName();
+		String chaineASupprimer="Vegetaux."; //On retire le nom 
+		nomDeMonLegume = nomDeMonLegume.replace(chaineASupprimer, "");
+		//On a donc le nom du vegetal
+		if (this.getPanier().get(nomDeMonLegume) == null) {
+			throw new IllegalArgumentException();
+		}else if (this.getPanier().get(nomDeMonLegume) > 0) {
+			this.retirerGraines(nomDeMonLegume,-1); //On retire une graine
+			this.emplacements[x][y] = new Emplacement(v);
+		}
 	}
 
 }

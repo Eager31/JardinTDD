@@ -32,7 +32,16 @@ public class TestFonctionnalités {
 	@Test
 	public void TestSemerUnLegume() {
 		Ail ail = new Ail();
+		jardin.AjouterGraines("Ail", 1);//On est obligés d'ajouter des graines
 		jardin.semer(0,0,ail);
 		assertEquals(jardin.getEmplacements()[0][0].getVegetal(),ail);
 	}
+	
+	//Test pour savoir si on plante un vegetal
+	@Test(expected=IllegalArgumentException.class)
+	public void TestSemerUnLegumeSansGraines() {
+		Ail ail = new Ail();
+		jardin.semer(0,0,ail);
+	}
+	
 }
