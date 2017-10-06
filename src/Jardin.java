@@ -120,9 +120,9 @@ public class Jardin {
 		for (int x = 0; x < this.longeur; x++) {
 			for (int y = 0; y < this.largeur; y++) {
 				if (this.emplacements[x][y] == null)
-					return ;
+					return;
 				if (this.emplacements[x][y].getVegetal().getEtat() == Etat.MORT) {
-					return ;
+					return;
 				}else {
 					this.emplacements[x][y].getVegetal().grandir();
 				}

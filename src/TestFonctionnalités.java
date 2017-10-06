@@ -80,4 +80,23 @@ public class TestFonctionnalités {
 		assertEquals(jardin.getEmplacements()[0][0].getVegetal().getCaractereDessin(jardin.getEmplacements()[0][0].getVegetal().getEtat().ordinal()),'c');
 		assertEquals(jardin.getEmplacements()[0][1].getVegetal().getCaractereDessin(jardin.getEmplacements()[0][1].getVegetal().getEtat().ordinal()),'a');
 	}
+	
+	//Test pour vérifier que les dessins liés au type de végétal évolue correctement
+	@Test
+	public void TestPasserSaisonsApresMort() {
+		Carotte car = new Carotte();
+		Ail ail = new Ail();
+		jardin.AjouterGraines("Ail", 1);
+		jardin.semer(0,0,ail); 
+		jardin.saisonSuivante();//On fais pousser la plante jusqu'à ce qu'il meurt et même après pour forcer le plantage.
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		//rien ne se passe car dans semer() on return; si l'Etat est égal à mort
+	}
 }
