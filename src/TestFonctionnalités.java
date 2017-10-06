@@ -133,4 +133,5 @@ public class TestFonctionnalités {
 		jardin.recolter();
 		assertEquals(jardin.getEmplacements()[2][2],null); // \\!/ Attention, les tableaux commencent à zéro
 	}
+	
 }

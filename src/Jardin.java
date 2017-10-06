@@ -1,6 +1,7 @@
 import java.util.HashMap;
 
 import Vegetaux.Etat;
+import Vegetaux.IRacePure;
 import Vegetaux.Vegetal;
 
 public class Jardin {
@@ -144,11 +145,17 @@ public class Jardin {
 					//Do nothing
 				}
 				else if (this.emplacements[x][y].getVegetal().getEtat() == Etat.FLEUR) {
+					if(this.emplacements[x][y].getVegetal() instanceof IRacePure) {
+							IRacePure v = (IRacePure) this.emplacements[x][y].getVegetal();
+							v.seReproduire(this.panier);
+					}else {
 					this.emplacements[x][y] = null;//On passe la fleur à null
+					}
 				}
 			}
 		}
 	}
 }
+
 
 
