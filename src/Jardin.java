@@ -127,10 +127,10 @@ public class Jardin {
 		// TODO Auto-generated method stub
 		for (int x = 0; x < this.longeur; x++) {
 			for (int y = 0; y < this.largeur; y++) {
-				if (this.emplacements[x][y] == null)
-					return;
-				if (this.emplacements[x][y].getVegetal().getEtat() == Etat.MORT) {
-					return;
+				if (this.emplacements[x][y] == null) {
+					//Do nothing
+				}else if (this.emplacements[x][y].getVegetal().getEtat() == Etat.MORT) {
+					//Do nothing
 				}else {
 					this.emplacements[x][y].getVegetal().grandir();
 				}
