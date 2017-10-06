@@ -1,3 +1,4 @@
+package Vegetaux;
 
 public abstract class Vegetal {
 
@@ -29,6 +30,8 @@ public abstract class Vegetal {
 		return this.dessin[i];
 	}
 	
-	
+	public void grandir() {
+		this.etat = Etat.values()[this.etat.ordinal() + 1]; //Pemet de passer à l'étape suivante d'une énumération
+	}
 	
 }

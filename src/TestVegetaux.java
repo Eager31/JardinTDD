@@ -1,7 +1,15 @@
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import Vegetaux.Ail;
+import Vegetaux.Betterave;
+import Vegetaux.Carotte;
+import Vegetaux.Etat;
+import Vegetaux.Tomate;
+import Vegetaux.Vegetal;
 
 public class TestVegetaux {
 	

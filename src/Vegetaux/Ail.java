@@ -1,3 +1,4 @@
+package Vegetaux;
 
 public class Ail extends Vegetal{
 

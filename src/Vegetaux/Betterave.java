@@ -1,3 +1,4 @@
+package Vegetaux;
 
 public class Betterave extends Vegetal {
 
