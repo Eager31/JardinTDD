@@ -158,7 +158,7 @@ public class Jardin {
 						duplicat = v.seDupliquer(this.longeur, this.largeur);
 						int NewX = duplicat.getKey();
 						int NewY = duplicat.getValue();
-						this.emplacements[NewX][NewY] = new Emplacement((Betterave) v);
+						this.emplacements[NewX][NewY] = new Emplacement(new Betterave());
 					}
 				this.emplacements[x][y] = null;//On passe la fleur à null
 				}
