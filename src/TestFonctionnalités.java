@@ -64,4 +64,20 @@ public class TestFonctionnalités {
 		jardin.saisonSuivante();//On fais pousser la plante
 		assertEquals(jardin.getEmplacements()[0][0].getVegetal().getCaractereDessin(jardin.getEmplacements()[0][0].getVegetal().getEtat().ordinal()),'.');
 	}
+	
+	//Test pour vérifier que les dessins liés au type de végétal évolue correctement
+	@Test
+	public void TestPasserSaisonsDessinsSpeciaux() {
+		Carotte car = new Carotte();
+		Ail ail = new Ail();
+		jardin.AjouterGraines("Carotte", 1);
+		jardin.AjouterGraines("Ail", 1);
+		jardin.semer(0,0,car); 
+		jardin.semer(0,1,ail); 
+		jardin.saisonSuivante();//On fais pousser la plante jusqu'à son état qui le départage des autres
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		assertEquals(jardin.getEmplacements()[0][0].getVegetal().getCaractereDessin(jardin.getEmplacements()[0][0].getVegetal().getEtat().ordinal()),'c');
+		assertEquals(jardin.getEmplacements()[0][1].getVegetal().getCaractereDessin(jardin.getEmplacements()[0][1].getVegetal().getEtat().ordinal()),'a');
+	}
 }
