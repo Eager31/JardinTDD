@@ -55,6 +55,14 @@ public class TestFonctionnalités {
 		assertEquals(nbrGraines,4);
 	}
 	
+	//Teste si on plante en dehors du jardin
+		@Test(expected=IllegalArgumentException.class)
+		public void TestPlantationRandomOutOfJardin() {
+			Carotte car = new Carotte();
+			jardin.AjouterGraines("Carotte", 5);
+			jardin.semer(99,99,car); //On plante nos carottes en dehors
+		}
+	
 	//Test pour savoir si on fais pousser une fois, la plante évolue
 	@Test
 	public void TestPasserUneSaison() {

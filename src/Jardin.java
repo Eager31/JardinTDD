@@ -107,6 +107,8 @@ public class Jardin {
 		String chaineASupprimer="Vegetaux."; //On retire le nom 
 		nomDeMonLegume = nomDeMonLegume.replace(chaineASupprimer, "");
 		//On a donc le nom du vegetal
+		if (x > this.longeur || y > this.largeur)
+			throw new IllegalArgumentException();
 		if (this.getPanier().get(nomDeMonLegume) == null) {
 			throw new IllegalArgumentException();
 		}else if (this.getPanier().get(nomDeMonLegume) > 0) {
@@ -142,7 +144,6 @@ public class Jardin {
 					this.emplacements[x][y] = null;//On passe la fleur à null
 				}
 			}
-				
 		}
 	}
 }
