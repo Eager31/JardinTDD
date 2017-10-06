@@ -107,11 +107,13 @@ public class Jardin {
 		String chaineASupprimer="Vegetaux."; //On retire le nom 
 		nomDeMonLegume = nomDeMonLegume.replace(chaineASupprimer, "");
 		//On a donc le nom du vegetal
-		if (x > this.longeur || y > this.largeur)
+		if (x > this.longeur || y > this.largeur) {
 			throw new IllegalArgumentException();
-		if (this.getPanier().get(nomDeMonLegume) == null) {
+		}
+		else if (this.getPanier().get(nomDeMonLegume) == null) {
 			throw new IllegalArgumentException();
-		}else if (this.getPanier().get(nomDeMonLegume) > 0) {
+		}
+		else if (this.getPanier().get(nomDeMonLegume) > 0) {
 			this.retirerGraines(nomDeMonLegume,-1); //On retire une graine
 			this.emplacements[x][y] = new Emplacement(v);
 		}
@@ -138,9 +140,10 @@ public class Jardin {
 		// TODO Auto-generated method stub
 		for (int x = 0; x < this.longeur; x++) {
 			for (int y = 0; y < this.largeur; y++) {
-				if (this.emplacements[x][y] == null)
-					return ;
-				if (this.emplacements[x][y].getVegetal().getEtat() == Etat.FLEUR) {
+				if (this.emplacements[x][y] == null) {
+					//Do nothing
+				}
+				else if (this.emplacements[x][y].getVegetal().getEtat() == Etat.FLEUR) {
 					this.emplacements[x][y] = null;//On passe la fleur à null
 				}
 			}

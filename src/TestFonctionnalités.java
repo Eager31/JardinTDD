@@ -120,4 +120,17 @@ public class TestFonctionnalités {
 		jardin.recolter();
 		assertEquals(jardin.getEmplacements()[0][0],null);
 	}
+	
+	@Test
+	public void TestSurRecolte2() {
+		Carotte car = new Carotte();
+		jardin.AjouterGraines("Carotte", 1);
+		jardin.semer(3,3,car); 
+		jardin.saisonSuivante();//On fais pousser la plante jusqu'à ce qu'elle soit récoltable
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		jardin.saisonSuivante();
+		jardin.recolter();
+		assertEquals(jardin.getEmplacements()[2][2],null); // \\!/ Attention, les tableaux commencent à zéro
+	}
 }
