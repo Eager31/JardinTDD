@@ -1,5 +1,6 @@
-import java.util.Arrays;
 import java.util.HashMap;
+
+import Vegetaux.Vegetal;
 
 public class Jardin {
 
@@ -86,6 +87,11 @@ public class Jardin {
 			chaineFinale = chaineFinale.concat("\n");
 		}
 		return chaineFinale;
+	}
+
+	public void semer(int x, int y, Vegetal v) {
+		// TODO Auto-generated method stub
+		this.emplacements[x][y] = new Emplacement(v);
 	}
 
 }

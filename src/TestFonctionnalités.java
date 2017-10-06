@@ -27,4 +27,12 @@ public class TestFonctionnalités {
 		jardin.getEmplacements()[0][2] = new Emplacement(new Ail());
 		assertTrue(jardin.RetournerJardin().contains("oo_o")); 
 	}
+	
+	//Test pour savoir si on plante un vegetal
+	@Test
+	public void TestSemerUnLegume() {
+		Ail ail = new Ail();
+		jardin.semer(0,0,ail);
+		assertEquals(jardin.getEmplacements()[0][0].getVegetal(),ail);
+	}
 }
