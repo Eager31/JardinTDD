@@ -57,4 +57,13 @@ public class TestVegetaux {
 				Ail ail = new Ail();
 				assertEquals(ail.getEtat(),Etat.GRAINE);
 			}
+			
+			//Tests du caractère assimilé à la pousse
+			@Test
+			public void TestCaractères() throws Exception {
+				Ail ail = new Ail();
+				assertEquals(ail.getCaractereDessin(0),'_');
+			}
+			
+			
 }
