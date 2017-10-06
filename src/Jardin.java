@@ -5,12 +5,14 @@ public class Jardin {
 	private int longeur;
 	private int largeur;
 	private HashMap<String,Integer> panier;
+	private Emplacement[][] emplacements;
 	
 	public Jardin(int i, int j) {
 		// TODO Auto-generated constructor stub
 		this.longeur = i;
 		this.largeur = j;
 		this.panier = new HashMap<String, Integer>();
+		this.emplacements = new Emplacement[this.longeur][this.largeur]; //Pourra contenir des emplacements
 	}
 
 	public int getLongeur() {
@@ -51,6 +53,15 @@ public class Jardin {
 		// TODO Auto-generated method stub
 		return this.panier.get(nomVegetal);
 	}
-	
+
+	public Emplacement[][] getEmplacements() {
+		return emplacements;
+	}
+
+	public void setEmplacements(Emplacement[][] emplacements) {
+		this.emplacements = emplacements;
+	}
+
+
 
 }
