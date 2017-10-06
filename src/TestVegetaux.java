@@ -36,5 +36,19 @@ public class TestVegetaux {
 				assertEquals(jardin.getEmplacements()[0][2].getVegetal().getClass(),emplacementcarotte.getVegetal().getClass());
 				assertEquals(jardin.getEmplacements()[0][3].getVegetal().getClass(),emplacementtomate.getVegetal().getClass());
 			}
+			
+			//Tests d'héritages
+			@Test
+			public void TestHeritage() throws Exception {
+				Ail ail = new Ail();
+				Betterave betterave = new Betterave();
+				Carotte carotte = new Carotte();
+				Tomate tomate = new Tomate();
+				
+				assertTrue(ail instanceof Vegetal);
+				assertTrue(betterave instanceof Vegetal);
+				assertTrue(carotte instanceof Vegetal);
+				assertTrue(tomate instanceof Vegetal);
+			}
 
 }
